@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PC Buiding</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h3>PC Building</h3>
+            <a href="/update-price" class="setting-menu setting-menu-update-price" title="reload"><i class="setting-icon fa fa-undo"></i></a>
+            <a href="/setting-menu" class="setting-menu" title="setting"><i class="setting-icon fa fa-gear"></i></a>
+        </div>
+        <% for(var i=0; i < displaySettingsPC.length; i++) { %>
+            <div class="items">
+                <a href="<%= displaySettingsPC[i].link %>" target="_blank" class="item" title="<%= displaySettingsPC[i].link %>">
+                    <div class="image">
+                        <img src="<%= displaySettingsPC[i].image %>" />
+                    </div>
+                    <div class="name">
+                        <%= displaySettingsPC[i].name %>
+                    </div>
+                    <div class="price"><span class="old-price"><%= displaySettingsPC[i].old_price %></span><%= displaySettingsPC[i].price %></div>
+                </a>
+            </div>
+         <% } %>
+        <h3 class="total"><%= totalPrice %></h3>
+    </div>
+</body>
+
+</html>

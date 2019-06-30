@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PC Buiding</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="/save-setting" method="post">
+            <div class="header">
+                <a href="/" class="setting-menu setting-menu-back"><i class="setting-icon fa fa-arrow-left"></i></a>
+                <h3>Hardware Settings</h3>
+                <button class="setting-menu setting-menu-save" type="submit"><i class="setting-icon fa fa-save"></i></button>
+            </div>
+            <% for(var i=0; i < settingsPC.length; i++) { %>
+            <div class="items">
+                <div class="item">
+                    <div class="image left-block">
+                        <img src="<%= settingsPC[i].image %>" />
+                    </div>
+                    <div class="right-block">
+                        <div>
+                            <label>Name:</label>
+                            <input type="text" name="name" value="<%= settingsPC[i].name %>" />
+                        </div>
+                        <div>
+                            <label>Image:</label>
+                            <input type="text" name="image" value="<%= settingsPC[i].image %>" />
+                        </div>
+                        <div>
+                            <label>Link:</label>
+                            <input type="text" name="link" value="<%= settingsPC[i].link %>" />
+                        </div>
+                        <div>
+                            <label>Price:</label>
+                            <input type="text" name="price" value="<%= settingsPC[i].price %>" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </form>
+    </div>
+</body>
+
+</html>
